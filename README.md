@@ -70,43 +70,230 @@ product-management-portfolio/
 - `npm run serve` - Start local development server
 - `npm run lint` - Run ESLint (if configured)
 
-## 📝 Adding New Case Studies
+## 📝 Adding New Case Studies - Step by Step Guide
 
-### Using the Template
-1. Copy `templates/case-study-template.html`
-2. Rename it to your case study (e.g., `my-new-case-study.html`)
-3. Replace the placeholder content:
-   - `[CASE_STUDY_TITLE]` - Your case study title
-   - `[ROLE]` - Your role in the project
-   - `[DURATION]` - Project duration
-   - `[TOOLS]` - Tools and technologies used
-   - `[TAG_1]`, `[TAG_2]`, `[TAG_3]` - Relevant tags
-   - `[EXECUTIVE_SUMMARY]` - Brief project overview
-   - `[PROBLEM_STATEMENT]` - Problem description
-   - And so on...
+This guide will help you add new case studies to your portfolio, even if you're not technical. Follow these steps carefully to ensure everything works correctly.
 
-### Adding to Main Page
-1. Add a new case study card to `index.html` in the case studies section
-2. Update the image path to point to your case study image
-3. Update the link to point to your new case study file
+### 🎯 Overview
+When you add a new case study, you'll need to:
+1. Add an image for the case study
+2. Create a new HTML page for the case study
+3. Add a card to the homepage to showcase the case study
 
-### Example Case Study Card
+### 📋 Step 1: Prepare Your Case Study Image
+
+**What you need:**
+- A high-quality image related to your case study (JPG or PNG format)
+- Recommended size: 800x600 pixels or similar aspect ratio
+- File size: Keep under 2MB for fast loading
+
+**How to do it:**
+1. Save your image with a descriptive name (e.g., `my-new-project.jpg`)
+2. Place the image in the `assets/images/` folder
+3. Make sure the filename has no spaces (use hyphens instead)
+
+**Example:**
+```
+assets/images/
+├── Alisha.jpg
+├── payroll-workflow.jpg
+├── virtual-taboo.jpg
+└── my-new-project.jpg  ← Your new image here
+```
+
+### 📄 Step 2: Create the Case Study HTML Page
+
+**What you need:**
+- The case study template file
+- Your case study content
+
+**How to do it:**
+
+1. **Open the template file:**
+   - Navigate to the `templates/` folder
+   - Open `case-study-template.html` in any text editor (Notepad, TextEdit, VS Code, etc.)
+
+2. **Save as a new file:**
+   - Click "File" → "Save As"
+   - Navigate to the `case-studies/` folder
+   - Name your file: `your-case-study-name.html` (use hyphens, no spaces)
+   - Example: `customer-onboarding.html`
+
+3. **Replace the placeholder content:**
+   Find and replace these placeholders with your actual content:
+
+   **Page Title and Meta Information:**
+   ```html
+   <title>[CASE_STUDY_TITLE] - Alisha Javed</title>
+   ```
+   Replace `[CASE_STUDY_TITLE]` with your actual title (e.g., "Customer Onboarding Optimization")
+
+   **Breadcrumb Navigation:**
+   ```html
+   <span>[CASE_STUDY_TITLE]</span>
+   ```
+   Replace with your case study title
+
+   **Case Study Header:**
+   ```html
+   <h1 class="case-study-title">[CASE_STUDY_TITLE]</h1>
+   ```
+   Replace with your case study title
+
+   **Project Details:**
+   ```html
+   <span class="meta-value">[ROLE]</span>
+   <span class="meta-value">[DURATION]</span>
+   <span class="meta-value">[TOOLS]</span>
+   ```
+   Replace with:
+   - `[ROLE]`: Your role (e.g., "Product Manager", "Product Analyst")
+   - `[DURATION]`: Project duration (e.g., "3 months", "6 weeks")
+   - `[TOOLS]`: Tools used (e.g., "Figma, Jira, Google Analytics")
+
+   **Tags:**
+   ```html
+   <span class="tag">[TAG_1]</span>
+   <span class="tag">[TAG_2]</span>
+   <span class="tag">[TAG_3]</span>
+   ```
+   Replace with relevant tags (e.g., "User Research", "Process Improvement", "Data Analysis")
+
+   **Content Sections:**
+   Replace each section with your actual content:
+   - `[EXECUTIVE_SUMMARY]` - Brief overview of the project
+   - `[PROBLEM_STATEMENT]` - What problem you solved
+   - `[RESEARCH_&_DISCOVERY]` - Your research process
+   - `[SOLUTION_DESIGN]` - How you designed the solution
+   - `[IMPLEMENTATION]` - How you implemented it
+   - `[RESULTS_&_IMPACT]` - The results and impact
+   - `[LESSONS_LEARNED]` - What you learned
+   - `[NEXT_STEPS]` - Future plans
+
+4. **Update the navigation links:**
+   - Find the navigation section at the bottom
+   - Update the "Previous Case Study" and "Next Case Study" links to point to the correct files
+
+### 🏠 Step 3: Add Case Study Card to Homepage
+
+**What you need:**
+- The main `index.html` file
+- Your case study details
+
+**How to do it:**
+
+1. **Open the homepage:**
+   - Open `index.html` in your text editor
+
+2. **Find the case studies section:**
+   - Look for the section that starts with `<section id="case-studies" class="case-studies">`
+   - Find the `<div class="case-studies-grid">` section
+
+3. **Add your new case study card:**
+   - Copy one of the existing case study cards
+   - Paste it before the closing `</div>` of the case studies grid
+   - Update the content with your case study information
+
+**Example of what to add:**
 ```html
 <article class="case-study-card">
     <div class="case-study-image">
-        <img src="assets/images/your-case-study.jpg" alt="Your Case Study" loading="lazy">
+        <img src="assets/images/your-case-study-image.jpg" alt="Your Case Study Description" loading="lazy">
     </div>
     <div class="case-study-content">
         <h3 class="case-study-title">Your Case Study Title</h3>
-        <p class="case-study-excerpt">Brief description of your case study...</p>
+        <p class="case-study-excerpt">
+            Brief description of your case study (1-2 sentences).
+        </p>
         <div class="case-study-meta">
             <span class="tag">Tag 1</span>
             <span class="tag">Tag 2</span>
         </div>
-        <a href="case-studies/your-case-study.html" class="case-study-link">Read Case Study →</a>
+        <a href="case-studies/your-case-study-name.html" class="case-study-link">Read Case Study →</a>
     </div>
 </article>
 ```
+
+**What to replace:**
+- `your-case-study-image.jpg` → Your actual image filename
+- `Your Case Study Description` → Brief description for the image
+- `Your Case Study Title` → Your actual case study title
+- `Brief description of your case study` → 1-2 sentence summary
+- `Tag 1`, `Tag 2` → Your relevant tags
+- `your-case-study-name.html` → Your actual HTML filename
+
+### ✅ Step 4: Test Your Changes
+
+1. **Open the homepage in a web browser:**
+   - Double-click on `index.html` to open it
+   - Check that your new case study card appears
+   - Click on the "Read Case Study →" link to make sure it opens your new page
+
+2. **Check the case study page:**
+   - Verify all content displays correctly
+   - Check that navigation links work
+   - Ensure the image appears properly
+
+### 🔧 Troubleshooting Common Issues
+
+**Image not showing:**
+- Check that the image filename matches exactly (case-sensitive)
+- Make sure the image is in the `assets/images/` folder
+- Verify the file extension is correct (.jpg, .png, etc.)
+
+**Link not working:**
+- Check that the HTML filename matches exactly
+- Make sure the file is in the `case-studies/` folder
+- Verify there are no spaces in the filename
+
+**Page looks broken:**
+- Check that all HTML tags are properly closed
+- Make sure you didn't accidentally delete any important code
+- Verify that quotes and brackets are properly matched
+
+### 📝 Example: Adding "Customer Onboarding" Case Study
+
+Here's a complete example of adding a new case study:
+
+1. **Image:** Save `customer-onboarding.jpg` in `assets/images/`
+
+2. **HTML File:** Create `case-studies/customer-onboarding.html` using the template
+
+3. **Homepage Card:** Add this to `index.html`:
+```html
+<article class="case-study-card">
+    <div class="case-study-image">
+        <img src="assets/images/customer-onboarding.jpg" alt="Customer Onboarding Process" loading="lazy">
+    </div>
+    <div class="case-study-content">
+        <h3 class="case-study-title">Customer Onboarding Optimization</h3>
+        <p class="case-study-excerpt">
+            Reduced onboarding time by 40% through process redesign and automation.
+        </p>
+        <div class="case-study-meta">
+            <span class="tag">Process Optimization</span>
+            <span class="tag">User Experience</span>
+        </div>
+        <a href="case-studies/customer-onboarding.html" class="case-study-link">Read Case Study →</a>
+    </div>
+</article>
+```
+
+### 💡 Tips for Success
+
+- **Keep filenames simple:** Use hyphens, no spaces or special characters
+- **Test as you go:** Check your changes in a browser frequently
+- **Backup your work:** Make copies of files before making major changes
+- **Use consistent naming:** Follow the same pattern for all your case studies
+- **Optimize images:** Compress large images to keep the site fast
+
+### 🆘 Need Help?
+
+If you encounter issues:
+1. Check the troubleshooting section above
+2. Compare your files with the existing case studies
+3. Make sure all file paths and names match exactly
+4. Test each step before moving to the next one
 
 ## 🎨 Customization
 
