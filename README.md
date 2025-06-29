@@ -114,10 +114,13 @@ product-management-portfolio/
 The color scheme is defined using CSS custom properties in `style.css`:
 ```css
 :root {
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary-color: #7c3aed;
-    --accent-color: #f59e0b;
+    --primary-color: #3b82f6;
+    --primary-dark: #2563eb;
+    --primary-light: #60a5fa;
+    --primary-lighter: #dbeafe;
+    --secondary-color: #6366f1;
+    --accent-color: #0ea5e9;
+    --accent-light: #7dd3fc;
     /* ... more colors */
 }
 ```
@@ -201,7 +204,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Contact
 
-- **Email**: alisha.javed@example.com
 - **LinkedIn**: [Alisha Javed](https://linkedin.com/in/alishajaved)
 - **GitHub**: [@alishajaved](https://github.com/alishajaved)
 
